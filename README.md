@@ -92,7 +92,8 @@ http://localhost:5000/api-docs
 ├── server.ts
 └── README.md
 ```
-
+## Live demo:
+https://auth-service-rabc.onrender.com/api-docs/
 
 
 
