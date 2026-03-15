@@ -4,6 +4,20 @@ A production-ready authentication microservice built with **Node.js, Express, Ty
 This service implements secure authentication features such as **JWT access tokens, refresh tokens, email verification, password reset flows, rate limiting, and API documentation with Swagger**.
 It is fully containerized using **Docker** for easy deployment.
 
+## Features
+
+- JWT authentication
+- Refresh tokens
+- Email verification
+- Password reset flow
+- Role-based authorization
+- Rate limiting
+- Swagger API documentation
+- PostgreSQL + Prisma
+- Docker deployment
+
+Perfect for SaaS, mobile apps, and web platforms.
+
 ## Tech Stack
 
 - Node.js
