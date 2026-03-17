@@ -30,10 +30,12 @@ export async function register(req: Request, res: Response) {
       message: "User created successfully",
       user,
     });
-  } catch (error: any) {
-    res.status(400).json({
-      message: error.message,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(400).json({ message: error.message });
+    } else {
+      res.status(400).json({ message: "Something went wrong" });
+    }
   }
 }
 
@@ -55,10 +57,12 @@ export async function login(req: Request, res: Response) {
       message: "Login successful",
       ...result,
     });
-  } catch (error: any) {
-    res.status(400).json({
-      message: error.message,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(400).json({ message: error.message });
+    } else {
+      res.status(400).json({ message: "Something went wrong" });
+    }
   }
 }
 
@@ -111,6 +115,7 @@ export async function refresh(req: Request, res: Response) {
       refreshToken: tokens.refreshToken,
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       message: "Invalid refresh token",
     });
@@ -130,10 +135,12 @@ export async function logout(req: Request, res: Response) {
     const result = await logoutUser(refreshToken);
 
     res.status(200).json(result);
-  } catch (error: any) {
-    res.status(400).json({
-      message: error.message,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(400).json({ message: error.message });
+    } else {
+      res.status(400).json({ message: "Something went wrong" });
+    }
   }
 }
 
@@ -169,6 +176,7 @@ export async function getAllUsers(req: Request, res: Response) {
       users,
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       message: "Failed to find user",
     });
