@@ -44,7 +44,7 @@ Perfect for SaaS, mobile apps, and web platforms.
 
 ## Run Locally
 
-```bash
+```
 docker compose up --build
 ```
 
